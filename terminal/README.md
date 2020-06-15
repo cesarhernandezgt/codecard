@@ -29,6 +29,17 @@ To change to wifi profile
 	ssid={your-ssid}
 	password={your-wifi-password}
 
+To change the fingerprint values
+
+	fingerprinta1={SSL-TLS-SHA-fingerprint}
+	fingerprinta2={SSL-TLS-SHA-fingerprint}
+	fingerprintb1={SSL-TLS-SHA-fingerprint}
+	fingerprintb2={SSL-TLS-SHA-fingerprint}
+	
+To obtain the SSL/TLS SHA fingerprint from the `apex.oracle.com` website you can use in Mac or Linux openssl:
+
+		openssl s_client -connect apex.oracle.com:443 < /dev/null 2>/dev/null | openssl x509 -fingerprint -sha1 -inform pem -noout -in /dev/stdin
+
 Keep in mind that pausing for 2 seconds while typing will automatically enter the command. It may be easier to pre-type the commands elsewhere and copy-paste them into the window.
 
 ### Manual Installation
